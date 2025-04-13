@@ -1,9 +1,9 @@
 export function ExcuseList({ excuseArray }: { excuseArray: String[] | undefined }) {
     return (
         <aside>
-            Zapisane Wymówki: 
+            <h3>Zapisane Wymówki:</h3> 
             {excuseArray.map(element => (
-                <span>{element}</span>
+                <span>~{element}</span>
             ))}
         </aside>
     )

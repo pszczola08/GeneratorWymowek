@@ -10,7 +10,7 @@ export function Excuse(props: ExcuseData) {
             reasonArray = "homework"
             break
         case "Spóźnienie":
-            reasonText = "spóźniłem się"
+            reasonText = "spóźniłem się"   
             reasonArray = "late"
             break
         case "Nieobecność":
@@ -61,13 +61,11 @@ export function Excuse(props: ExcuseData) {
     const excuseText = excuses[reasonArray][props.credibility_level - 1][props.creativity_level - 1]
     const fullExcuse = `Panie ${props.name}, naprawdę mi przykro, ale ${props.date} ${reasonText}, ponieważ ${excuseText}.`
     return(
-        <>
-            <p>
-            {fullExcuse}
-            </p>
-            <button
-                onClick={saveExcuse(fullExcuse)}
-            > Zapisz Wymówkę </button>
-        </>
+        <div className="excuse-container">
+            <p>{fullExcuse}</p>
+            <button onClick={() => saveExcuse(fullExcuse)}>
+                Zapisz Wymówkę
+            </button>
+        </div>
     )
 }
